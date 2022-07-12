@@ -21,7 +21,7 @@ func main() {
 	ctrl := controller.NewController(usecase)
 
 	r.Group(func(rs chi.Router) {
-		// rs.Use(auth.GetToken)
+		rs.Use(auth.GetToken)
 
 		rs.Get("/getdata-game", ctrl.GetDataGame)
 
